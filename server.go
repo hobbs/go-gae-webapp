@@ -1,7 +1,6 @@
 package thebrief
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
@@ -17,5 +16,9 @@ func init() {
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	fmt.Fprint(w, "Hello, world!")
+	err := renderWithPartials(w, "home", "Welcome", nil)
+
+	if err != nil {
+		w.Write([]byte(err.Error()))
+	}
 }
