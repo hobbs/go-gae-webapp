@@ -16,6 +16,7 @@
     "brunch": "^2.0.0",
     "clean-css-brunch": "^2.0.0",
     "css-brunch": "^2.0.0",
+    "fingerprint-brunch": "^1.2.8",
     "javascript-brunch": "^2.0.0",
     "sass-brunch": "^2.9.0",
     "uglify-js-brunch": "^2.0.0"

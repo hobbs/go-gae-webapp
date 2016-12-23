@@ -7,5 +7,13 @@ module.exports = {
   },
   paths: {
     watched: ['js','css','assets']
+  },
+  plugins: {
+    fingerprint: {
+      autoClearOldFiles: true,
+      alwaysRun: true,
+      srcBasePath: 'public/',
+      destBasePath: 'public/'
+    }
   }
 }

@@ -1,14 +1,21 @@
-package hello
+package thebrief
 
 import (
-    "fmt"
-    "net/http"
+	"fmt"
+	"net/http"
+
+	"github.com/julienschmidt/httprouter"
 )
 
 func init() {
-    http.HandleFunc("/", handler)
+	router := httprouter.New()
+
+	router.GET("/:category/:slug", articleHandler)
+	router.GET("/", homeHandler)
+
+	http.Handle("/", router)
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprint(w, "Hello, world!")
+func homeHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	fmt.Fprint(w, "Hello, world!")
 }
