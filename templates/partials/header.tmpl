@@ -2,8 +2,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{.Title}}
+        <title>The Brief - {{.Title}}</title>
+
+        {{range .StyleFiles}}
+        <link rel="stylesheet" type="text/css" href="/static/{{.}}">
+        {{end}}
+
+        {{range .ScriptFiles}}
+        <script src="/static/{{.}}"></script>
+        {{end}}
+
     </head>
-
-
     <body>
+{{end}}
